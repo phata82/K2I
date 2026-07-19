@@ -985,7 +985,8 @@ img {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.7rem;
+        font-size: clamp(1.2rem, 7vw, 1.8rem);
+        white-space: nowrap;
     }
     
     .about-text h3 {
