@@ -555,7 +555,7 @@ img {
 
 .gallery-overlay {
     position: absolute;
-    bottom: -100%;
+    bottom: 0;
     left: 0;
     width: 100%;
     padding: 30px;
@@ -566,10 +566,6 @@ img {
 
 .gallery-item:hover img {
     transform: scale(1.1);
-}
-
-.gallery-item:hover .gallery-overlay {
-    bottom: 0;
 }
 
 .gallery-overlay h4 {
