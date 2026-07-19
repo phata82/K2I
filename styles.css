@@ -254,7 +254,9 @@ img {
     font-size: 4rem;
     color: var(--white);
     margin-bottom: 20px;
-    text-align: left;
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
 }
 
 .hero p {
