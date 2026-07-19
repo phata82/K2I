@@ -983,7 +983,24 @@ img {
     }
 }
 
+@keyframes panBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseButton {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
 @media (max-width: 480px) {
+    .hero {
+        background-attachment: scroll; /* Fix for mobile */
+        animation: panBackground 25s ease-in-out infinite;
+    }
+    
     .hero h1 {
         font-size: clamp(1.2rem, 7vw, 1.8rem);
         white-space: nowrap;
@@ -996,5 +1013,9 @@ img {
     .hero-buttons .btn {
         width: 100%;
         margin-bottom: 10px;
+    }
+    
+    .hero-buttons .btn-primary {
+        animation: pulseButton 2s infinite;
     }
 }
