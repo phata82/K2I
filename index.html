@@ -301,6 +301,14 @@
                         </div>
                     </div>
                     
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@khayrun-immo.com">contact@khayrun-immo.com</a></p>
+                        </div>
+                    </div>
+                    
                     <div class="info-item mt-4">
                         <a href="tel:+221777150723" class="btn btn-primary"><i class="fas fa-phone"></i> Appeler maintenant</a>
                     </div>
@@ -309,18 +317,18 @@
                 <div class="contact-form-container fade-up delay-1">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Votre nom complet" required>
+                            <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Votre adresse email" required>
+                            <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Votre numéro de téléphone">
+                            <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="Votre message..." required></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Envoyer le message</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary w-100">Envoyer le message</button>
                     </form>
                 </div>
             </div>

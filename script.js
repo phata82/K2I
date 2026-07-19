@@ -103,13 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Form Submission (Prevent default for demo)
+    // 6. Form Submission to contact@khayrun-immo.com via FormSubmit
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Merci pour votre message ! Notre équipe K2I vous contactera très prochainement.');
-            contactForm.reset();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Envoi en cours...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch("https://formsubmit.co/ajax/contact@khayrun-immo.com", {
+                method: "POST",
+                headers: { 
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Merci pour votre message ! Notre équipe vous contactera très prochainement.');
+                contactForm.reset();
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Une erreur s'est produite lors de l'envoi. Veuillez nous contacter directement par téléphone ou email.");
+            })
+            .finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
         });
     }
 
